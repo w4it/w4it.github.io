@@ -1,16 +1,17 @@
-<p>Возможно ли еденичными квадратами 4x4 и 3x3 сделать все элементы матрицы делимыми на 10?</p>
-<canvas class="disable-dbl-tap-zoom" id="canvas"></canvas>
-<br><br>
-<button onclick="set0()">нулевая</button>
-<button onclick="set1()">еденичная</button>
-<button onclick="setgrad()">градиент</button>
-<button onclick="setrand()">случайная</button>
-
 <style>
 .disable-dbl-tap-zoom {
 	touch-action: manipulation;
 }
 </style>
+
+<body>
+	<canvas class="disable-dbl-tap-zoom" id="canvas"></canvas>
+	<br><br>
+	<button onclick="set0()">нулевая</button>
+	<button onclick="set1()">еденичная</button>
+	<button onclick="setgrad()">градиент</button>
+	<button onclick="setrand()">случайная</button>
+</body>
 
 <script>
 var canvas = document.getElementById("canvas");
@@ -22,9 +23,9 @@ table={
 };
 
 cell={
-	height:40,
-	width:40,
-	margin:30,
+	height:60,
+	width:60,
+	margin:45,
 };
 
 canvas.width=(table.width?cell.margin:0) + (cell.width+cell.margin)*table.width ;
