@@ -36,6 +36,7 @@ canvas.onmousemove = function(e){
 canvas.onmouseup = function(e){
 	m.x=e.offsetX;
 	m.y=e.offsetY;
+	e.preventDefault();
 	select(add);
 	draw();
 	select(highlight);
