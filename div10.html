@@ -34,13 +34,17 @@ canvas.onmousemove = function(e){
 };
 
 canvas.onmouseup = function(e){
+	e.preventDefault();
 	m.x=e.offsetX;
 	m.y=e.offsetY;
-	e.preventDefault();
 	select(add);
 	draw();
 	select(highlight);
 	localStorage.setItem("youmatrix", JSON.stringify(arr));
+};
+	
+canvas.onclick = function(e){
+	e.preventDefault();
 };
 
 function set0(){
