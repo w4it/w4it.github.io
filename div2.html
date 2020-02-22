@@ -1,15 +1,18 @@
-<canvas class="disable-dbl-tap-zoom" id="canvas"></canvas>
-<br><br>
-<button onclick="set0()">нулевая</button>
-<button onclick="set1()">еденичная</button>
-<button onclick="setgrad()">градиент</button>
-<button onclick="setrand()">случайная</button>
-
 <style>
 .disable-dbl-tap-zoom {
 	touch-action: manipulation;
 }
 </style>
+
+<body>
+	<canvas class="disable-dbl-tap-zoom" id="canvas"></canvas>
+	<br><br>
+	<button onclick="set0()">нулевая</button>
+	<button onclick="set1()">еденичная</button>
+	<button onclick="setgrad()">градиент</button>
+	<button onclick="setrand()">случайная</button>
+</body>
+
 
 <script>
 var canvas = document.getElementById("canvas");
@@ -136,7 +139,6 @@ function draw(){
 	for(i=0;i<table.height;i++){
 		for(j=0;j<table.width;j++){
 			fcolors = ["#333","#f00","#f70","#ff0","#0f0","#0ff","#09f","#07f","#03f","#00f",];
-			tcolors = ["#fff","#000","#000","#000","#000","#000","#000","#000","#000","#fff",];
 			ctx.fillStyle = fcolors[arr[i][j]];
 			ctx.fillRect(
 				cell.margin + j*(cell.margin+cell.width), 
@@ -145,12 +147,7 @@ function draw(){
 				cell.height
 			);
 		
-			ctx.fillStyle = tcolors[arr[i][j]];;
-			ctx.fillText(
-				arr[i][j], 
-				cell.margin + cell.width*0.05 + j*(cell.margin+cell.width), 
-				cell.margin + cell.height*0.8 + i*(cell.margin+cell.height)
-			);
+			
 		}	
 	}
 }
