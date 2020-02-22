@@ -44,7 +44,7 @@ canvas.onmouseup = function(e){
 	select(add);
 	draw();
 	select(highlight);
-	localStorage.setItem("youmatrix", JSON.stringify(arr));
+	localStorage.setItem("youmatrix2", JSON.stringify(arr));
 };
 
 function set0(){
@@ -156,7 +156,7 @@ function draw(){
 	}
 }
 
-arr = JSON.parse(localStorage.getItem("youmatrix"));
+arr = JSON.parse(localStorage.getItem("youmatrix2"));
 if(arr==null){setgrad();}
 draw();
 </script>
