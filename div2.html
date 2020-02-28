@@ -44,6 +44,9 @@ canvas.onmousemove = function(e){
 	ctx.fillStyle = "#fff";
 	ctx.fillRect(m.x-10, m.y, 20, 1);
 	ctx.fillRect(m.x, m.y-10, 1, 20);
+	
+	ctx.fillText("x:"+m.x+" y:"+m.y+"\n ypos:"+((m.y-cell.margin*1.5)/(cell.height+cell.margin)-1), m.x, m.y);
+	
 
 };
 
@@ -104,7 +107,10 @@ function highlight(istart, jstart, isize, jsize){
 	//ctx.fillRect(cell.margin+jstart*(cell.width+cell.margin), cell.margin+istart*(cell.height+cell.margin), jsize*cell.width+(jsize-1)*cell.margin, isize*cell.height+(isize-1)*cell.margin);
 	ctx.strokeStyle="#fff";
 	ctx.lineWidth=5;
-	ctx.strokeRect(cell.margin+jstart*(cell.width+cell.margin), cell.margin+istart*(cell.height+cell.margin), jsize*cell.width+(jsize-1)*cell.margin, isize*cell.height+(isize-1)*cell.margin);
+	ctx.strokeRect(cell.margin+jstart*(cell.width+cell.margin),
+		       cell.margin+istart*(cell.height+cell.margin), 
+		       jsize*cell.width+(jsize-1)*cell.margin, 
+		       isize*cell.height+(isize-1)*cell.margin);
 }
 
 function add(istart, jstart, isize, jsize){
@@ -125,7 +131,8 @@ function select(f){
 			(	m.x>2*cell.margin+cell.width) &&
 			(	m.y>2*cell.margin+cell.height)
 		){
-			f(Math.floor((m.y-cell.margin)/(cell.height+cell.margin))-1,Math.floor((m.x-cell.margin)/(cell.width+cell.margin))-1,3,3);
+			f(Math.floor((m.y-cell.margin)/(cell.height+cell.margin))-1,
+			  Math.floor((m.x-cell.margin)/(cell.width+cell.margin))-1,	3,3);
 		}
 		else if	(
 			(m.x<(cell.width+cell.margin)*table.width-cell.margin-cell.width*1.5) &&
@@ -133,7 +140,8 @@ function select(f){
 			(	m.x>2*cell.margin+cell.width*1.5) &&
 			(	m.y>2*cell.margin+cell.height*1.5)
 		){
-			f(Math.floor((m.y-cell.margin*1.5)/(cell.height+cell.margin))-1,Math.floor((m.x-cell.margin*1.5)/(cell.width+cell.margin))-1,4,4);
+			f(Math.floor((m.y-cell.margin*1.5)/(cell.height+cell.margin))-1,
+			  Math.floor((m.x-cell.margin*1.5)/(cell.width+cell.margin))-1,	4,4);
 		}
 }
 
