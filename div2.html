@@ -42,7 +42,8 @@ canvas.onmousemove = function(e){
 	select(highlight);
 
 	ctx.fillStyle = "#fff";
-	ctx.fillRect(m.x, m.y, 1, 1);
+	ctx.fillRect(m.x-10, m.y, 20, 1);
+	ctx.fillRect(m.x, m.y-10, 1, 20);
 
 };
 
