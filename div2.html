@@ -44,8 +44,9 @@ canvas.onmousemove = function(e){
 	ctx.fillStyle = "#fff";
 	ctx.fillRect(m.x-10, m.y, 20, 1);
 	ctx.fillRect(m.x, m.y-10, 1, 20);
-	
-	ctx.fillText("x:"+m.x+" y:"+m.y+"\n ypos:"+((m.y-cell.margin*1.5)/(cell.height+cell.margin)-1), m.x, m.y);
+	ctx.font = cell.height*0.8+"px Arial";
+	ctx.fillText("x:"+m.x+" y:"+m.y, m.x, m.y);
+	ctx.fillText("ypos:"+((m.y-cell.margin*1.5)/(cell.height+cell.margin)-1), m.x, m.y+cell.height*0.8);
 	
 
 };
