@@ -128,7 +128,8 @@ function select(f){
 			(	m.x>2*cell.margin+cell.width*1.5) &&
 			(	m.y>2*cell.margin+cell.height*1.5)
 		){
-			f(Math.floor((m.y-cell.margin*1.5)/(cell.height+cell.margin))-1,Math.floor((m.x-cell.margin*1.5)/(cell.width+cell.margin))-1,4,4);
+			f(Math.floor((m.y-cell.margin-cell.height/2)/(cell.height+cell.margin))-1,
+			  Math.floor((m.x-cell.margin-cell.width/2)/(cell.width+cell.margin))-1,4,4);
 		}
 }
 
