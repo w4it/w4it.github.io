@@ -46,7 +46,7 @@ canvas.onmousemove = function(e){
 	ctx.fillRect(m.x, m.y-10, 1, 20);
 	ctx.font = cell.height*0.8+"px Arial";
 	ctx.fillText("x:"+m.x+" y:"+m.y, m.x, m.y);
-	ctx.fillText("ypos:"+((m.y-cell.margin*1.5)/(cell.height+cell.margin)-1), m.x, m.y+cell.height*0.8);
+	ctx.fillText("ypos:"+((m.y-cell.margin-cell.height/2)/(cell.height+cell.margin)-1), m.x, m.y+cell.height*0.8);
 	
 
 };
@@ -141,8 +141,8 @@ function select(f){
 			(	m.x>2*cell.margin+cell.width*1.5) &&
 			(	m.y>2*cell.margin+cell.height*1.5)
 		){
-			f(Math.floor((m.y-cell.margin*1.5)/(cell.height+cell.margin))-1,
-			  Math.floor((m.x-cell.margin*1.5)/(cell.width+cell.margin))-1,	4,4);
+			f(Math.floor((m.y-cell.margin-cell.height/2)/(cell.height+cell.margin))-1,
+			  Math.floor((m.x-cell.margin-cell.width/2)/(cell.width+cell.margin))-1,	4,4);
 		}
 }
 
