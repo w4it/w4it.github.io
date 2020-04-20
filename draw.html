@@ -167,8 +167,8 @@ function select(f){
 		}
 }
 
-function draw(){
-istart = (istart==null)?0:istart;
+function draw(istart, jstart, isize, jsize){
+	istart = (istart==null)?0:istart;
 	jstart = (jstart==null)?0:jstart;
 	
 	iend = (isize==null)?(table.height):(istart+isize);
