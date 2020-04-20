@@ -60,6 +60,8 @@ body {
 	<button onclick="set1()">еденичная</button>
 	<button onclick="setgrad()">градиент</button>
 	<button onclick="setrand()">случайная</button>
+	<button onclick="draw()">перерисовать</button>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 </div>
 </div>
@@ -88,7 +90,7 @@ canvas.onmousemove = function(e){
 	m.x=e.offsetX;
 	m.y=e.offsetY;
 	select(add);
-	draw();
+	select(draw);
 
 };
 
@@ -96,7 +98,7 @@ canvas.onmouseup = function(e){
 	m.x=e.offsetX;
 	m.y=e.offsetY;
 	select(add);
-	draw();
+	select(draw);
 	localStorage.setItem("draw", JSON.stringify(arr));
 };
 
@@ -166,11 +168,17 @@ function select(f){
 }
 
 function draw(){
-	ctx.fillStyle = "black";
-	ctx.fillRect(0, 0, canvas.width, canvas.height);
+istart = (istart==null)?0:istart;
+	jstart = (jstart==null)?0:jstart;
 	
-	for(i=0;i<table.height;i++){
-		for(j=0;j<table.width;j++){
+	iend = (isize==null)?(table.height):(istart+isize);
+	jend = (jsize==null)?(table.width):(jstart+jsize);
+
+	//ctx.fillStyle = "black";
+	//ctx.fillRect(0, 0, canvas.width, canvas.height);
+	
+	for(i=istart;i<iend;i++){
+		for(j=jstart;j<jend;j++){
 			//fcolors = ["#333","#f00","#f70","#ff0","#0f0","#0ff","#09f","#07f","#03f","#00f",];
 			//ctx.fillStyle = fcolors[arr[i][j]];
 			//ctx.fillStyle = "hsl("+(arr[i][j]*360/16)+", 100%,50% )";
