@@ -18,8 +18,8 @@ var t2 = performance.now()
 
 console.log("Creating array of 100 000 random numbers took " + (t1 - t0) + " milliseconds.")
 console.log("Sorting took " + (t2 - t1) + " milliseconds.")
-document.body.innerHTML += "создание: " + (t1 - t0) + "ms<br>"
-document.body.innerHTML += "сортировка: " + (t2 - t1) + "ms"
+document.body.innerHTML += "создание: " + (t1 - t0).toFixed(2) + "ms<br>"
+document.body.innerHTML += "сортировка: " + (t2 - t1).toFixed(2) + "ms"
 
 
 /*
