@@ -1,0 +1,38 @@
+<style>
+
+</style>
+
+<body>
+Создание массива на 100 000 элементов и его сортировка...<br>
+</body>
+
+<script>
+var t0 = performance.now()
+arr = [];
+for(i=0;i<100000;i++){
+    arr.push(Math.floor(Math.random()*10000000));
+}
+var t1 = performance.now()
+arr.sort((a,b)=>(a-b))
+var t2 = performance.now()
+
+console.log("Creating array of 100 000 random numbers took " + (t1 - t0) + " milliseconds.")
+console.log("Sorting took " + (t2 - t1) + " milliseconds.")
+document.body.innerHTML += "создание: " + (t1 - t0) + "ms<br>"
+document.body.innerHTML += "сортировка: " + (t2 - t1) + "ms"
+
+
+/*
+output = document.getElementById("output");
+input.oninput = every;
+freq.oninput = every;
+
+function every(f){
+	f = freq.value;
+	text = input.value;
+	output.value="";
+	for(i=0;i<text.length;i++){
+		if(i%f==f-1){output.value += text[i];}
+	}
+}*/
+</script>
